@@ -35,15 +35,15 @@ set_target_properties(lldDriver PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS lldDriver )
 list(APPEND _IMPORT_CHECK_FILES_FOR_lldDriver "${_IMPORT_PREFIX}/lib/liblldDriver.a" )
 
-# Import target "lldMachO" for configuration "Release"
-set_property(TARGET lldMachO APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-set_target_properties(lldMachO PROPERTIES
+# Import target "lldMachOOld" for configuration "Release"
+set_property(TARGET lldMachOOld APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(lldMachOOld PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
-  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/liblldMachO.a"
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/liblldMachOOld.a"
   )
 
-list(APPEND _IMPORT_CHECK_TARGETS lldMachO )
-list(APPEND _IMPORT_CHECK_FILES_FOR_lldMachO "${_IMPORT_PREFIX}/lib/liblldMachO.a" )
+list(APPEND _IMPORT_CHECK_TARGETS lldMachOOld )
+list(APPEND _IMPORT_CHECK_FILES_FOR_lldMachOOld "${_IMPORT_PREFIX}/lib/liblldMachOOld.a" )
 
 # Import target "lldYAML" for configuration "Release"
 set_property(TARGET lldYAML APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
@@ -94,15 +94,15 @@ set_target_properties(lldELF PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS lldELF )
 list(APPEND _IMPORT_CHECK_FILES_FOR_lldELF "${_IMPORT_PREFIX}/lib/liblldELF.a" )
 
-# Import target "lldMachO2" for configuration "Release"
-set_property(TARGET lldMachO2 APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
-set_target_properties(lldMachO2 PROPERTIES
+# Import target "lldMachO" for configuration "Release"
+set_property(TARGET lldMachO APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(lldMachO PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
-  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/liblldMachO2.a"
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/liblldMachO.a"
   )
 
-list(APPEND _IMPORT_CHECK_TARGETS lldMachO2 )
-list(APPEND _IMPORT_CHECK_FILES_FOR_lldMachO2 "${_IMPORT_PREFIX}/lib/liblldMachO2.a" )
+list(APPEND _IMPORT_CHECK_TARGETS lldMachO )
+list(APPEND _IMPORT_CHECK_FILES_FOR_lldMachO "${_IMPORT_PREFIX}/lib/liblldMachO.a" )
 
 # Import target "lldMinGW" for configuration "Release"
 set_property(TARGET lldMinGW APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)

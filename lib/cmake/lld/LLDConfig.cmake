@@ -10,7 +10,7 @@ get_filename_component(LLD_INSTALL_PREFIX "${LLD_INSTALL_PREFIX}" PATH)
 find_package(LLVM REQUIRED CONFIG
              HINTS "${LLD_INSTALL_PREFIX}/lib/cmake/llvm")
 
-set(LLD_EXPORTED_TARGETS "lldCommon;lldCore;lldDriver;lldMachO;lldYAML;lldReaderWriter;lld;lldCOFF;lldELF;lldMachO2;lldMinGW;lldWasm")
+set(LLD_EXPORTED_TARGETS "lldCommon;lldCore;lldDriver;lldMachOOld;lldYAML;lldReaderWriter;lld;lldCOFF;lldELF;lldMachO;lldMinGW;lldWasm")
 set(LLD_CMAKE_DIR "${LLD_INSTALL_PREFIX}/lib/cmake/lld")
 set(LLD_INCLUDE_DIRS "${LLD_INSTALL_PREFIX}/include")
 

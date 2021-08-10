@@ -1076,6 +1076,16 @@ set_target_properties(llvm-diff PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS llvm-diff )
 list(APPEND _IMPORT_CHECK_FILES_FOR_llvm-diff "${_IMPORT_PREFIX}/bin/llvm-diff" )
 
+# Import target "LLVMDiff" for configuration "Release"
+set_property(TARGET LLVMDiff APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(LLVMDiff PROPERTIES
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/libLLVMDiff.a"
+  )
+
+list(APPEND _IMPORT_CHECK_TARGETS LLVMDiff )
+list(APPEND _IMPORT_CHECK_FILES_FOR_LLVMDiff "${_IMPORT_PREFIX}/lib/libLLVMDiff.a" )
+
 # Import target "llvm-dis" for configuration "Release"
 set_property(TARGET llvm-dis APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(llvm-dis PROPERTIES

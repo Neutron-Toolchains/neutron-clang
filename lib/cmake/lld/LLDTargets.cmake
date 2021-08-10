@@ -16,7 +16,7 @@ set(CMAKE_IMPORT_FILE_VERSION 1)
 set(_targetsDefined)
 set(_targetsNotDefined)
 set(_expectedTargets)
-foreach(_expectedTarget lldCommon lldCore lldDriver lldMachO lldYAML lldReaderWriter lld lldCOFF lldELF lldMachO2 lldMinGW lldWasm)
+foreach(_expectedTarget lldCommon lldCore lldDriver lldMachOOld lldYAML lldReaderWriter lld lldCOFF lldELF lldMachO lldMinGW lldWasm)
   list(APPEND _expectedTargets ${_expectedTarget})
   if(NOT TARGET ${_expectedTarget})
     list(APPEND _targetsNotDefined ${_expectedTarget})
@@ -68,13 +68,13 @@ set_target_properties(lldCore PROPERTIES
 add_library(lldDriver STATIC IMPORTED)
 
 set_target_properties(lldDriver PROPERTIES
-  INTERFACE_LINK_LIBRARIES "lldCommon;lldCore;lldMachO;lldReaderWriter;lldYAML;LLVMOption;LLVMSupport"
+  INTERFACE_LINK_LIBRARIES "lldCommon;lldCore;lldMachOOld;lldReaderWriter;lldYAML;LLVMOption;LLVMSupport"
 )
 
-# Create imported target lldMachO
-add_library(lldMachO STATIC IMPORTED)
+# Create imported target lldMachOOld
+add_library(lldMachOOld STATIC IMPORTED)
 
-set_target_properties(lldMachO PROPERTIES
+set_target_properties(lldMachOOld PROPERTIES
   INTERFACE_LINK_LIBRARIES "lldCommon;lldCore;lldYAML;-lpthread;LLVMDebugInfoDWARF;LLVMDemangle;LLVMObject;LLVMSupport;LLVMTextAPI"
 )
 
@@ -110,10 +110,10 @@ set_target_properties(lldELF PROPERTIES
   INTERFACE_LINK_LIBRARIES "lldCommon;-lpthread;LLVMARMCodeGen;LLVMARMAsmParser;LLVMARMDesc;LLVMARMDisassembler;LLVMARMInfo;LLVMARMUtils;LLVMAArch64CodeGen;LLVMAArch64AsmParser;LLVMAArch64Desc;LLVMAArch64Disassembler;LLVMAArch64Info;LLVMAArch64Utils;LLVMX86CodeGen;LLVMX86AsmParser;LLVMX86Desc;LLVMX86Disassembler;LLVMX86Info;LLVMBinaryFormat;LLVMBitWriter;LLVMCore;LLVMDebugInfoDWARF;LLVMDemangle;LLVMLTO;LLVMMC;LLVMObject;LLVMOption;LLVMPasses;LLVMSupport"
 )
 
-# Create imported target lldMachO2
-add_library(lldMachO2 STATIC IMPORTED)
+# Create imported target lldMachO
+add_library(lldMachO STATIC IMPORTED)
 
-set_target_properties(lldMachO2 PROPERTIES
+set_target_properties(lldMachO PROPERTIES
   INTERFACE_LINK_LIBRARIES "lldCommon;-lpthread;LLVMARMCodeGen;LLVMARMAsmParser;LLVMARMDesc;LLVMARMDisassembler;LLVMARMInfo;LLVMARMUtils;LLVMAArch64CodeGen;LLVMAArch64AsmParser;LLVMAArch64Desc;LLVMAArch64Disassembler;LLVMAArch64Info;LLVMAArch64Utils;LLVMX86CodeGen;LLVMX86AsmParser;LLVMX86Desc;LLVMX86Disassembler;LLVMX86Info;LLVMBinaryFormat;LLVMBitReader;LLVMCore;LLVMDebugInfoDWARF;LLVMLTO;LLVMMC;LLVMObjCARCOpts;LLVMObject;LLVMOption;LLVMPasses;LLVMSupport;LLVMTextAPI"
 )
 
