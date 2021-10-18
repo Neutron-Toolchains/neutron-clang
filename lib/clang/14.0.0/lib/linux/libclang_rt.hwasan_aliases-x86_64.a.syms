@@ -1,10 +1,12 @@
 {
   __hwasan_*;
+  __interceptor___libc_longjmp;
   __interceptor___libc_memalign;
   __interceptor_aligned_alloc;
   __interceptor_calloc;
   __interceptor_cfree;
   __interceptor_free;
+  __interceptor_longjmp;
   __interceptor_mallinfo;
   __interceptor_malloc;
   __interceptor_malloc_stats;
@@ -16,8 +18,12 @@
   __interceptor_pvalloc;
   __interceptor_realloc;
   __interceptor_reallocarray;
+  __interceptor_setjmp;
+  __interceptor_siglongjmp;
+  __interceptor_sigsetjmp;
   __interceptor_valloc;
   __interceptor_vfork;
+  __libc_longjmp;
   __libc_memalign;
   __sanitizer___libc_memalign;
   __sanitizer_acquire_crash_state;
@@ -89,6 +95,7 @@
   calloc;
   cfree;
   free;
+  longjmp;
   mallinfo;
   malloc;
   malloc_stats;
@@ -100,6 +107,7 @@
   pvalloc;
   realloc;
   reallocarray;
+  siglongjmp;
   valloc;
   vfork;
 };

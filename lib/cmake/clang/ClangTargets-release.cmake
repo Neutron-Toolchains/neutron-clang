@@ -429,6 +429,15 @@ set_target_properties(clang-scan-deps PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS clang-scan-deps )
 list(APPEND _IMPORT_CHECK_FILES_FOR_clang-scan-deps "${_IMPORT_PREFIX}/bin/clang-scan-deps" )
 
+# Import target "clang-repl" for configuration "Release"
+set_property(TARGET clang-repl APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(clang-repl PROPERTIES
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/bin/clang-repl"
+  )
+
+list(APPEND _IMPORT_CHECK_TARGETS clang-repl )
+list(APPEND _IMPORT_CHECK_FILES_FOR_clang-repl "${_IMPORT_PREFIX}/bin/clang-repl" )
+
 # Import target "clang-rename" for configuration "Release"
 set_property(TARGET clang-rename APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(clang-rename PROPERTIES
