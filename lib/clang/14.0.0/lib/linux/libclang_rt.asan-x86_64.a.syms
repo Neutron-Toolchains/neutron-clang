@@ -255,6 +255,8 @@
   __interceptor_poll;
   __interceptor_popen;
   __interceptor_posix_memalign;
+  __interceptor_posix_spawn;
+  __interceptor_posix_spawnp;
   __interceptor_ppoll;
   __interceptor_prctl;
   __interceptor_pread;
@@ -377,6 +379,7 @@
   __interceptor_snprintf;
   __interceptor_sprintf;
   __interceptor_sscanf;
+  __interceptor_stat;
   __interceptor_statfs;
   __interceptor_statfs64;
   __interceptor_statvfs;
@@ -1447,6 +1450,8 @@
   poll;
   popen;
   posix_memalign;
+  posix_spawn;
+  posix_spawnp;
   ppoll;
   prctl;
   pread;
@@ -1566,6 +1571,7 @@
   snprintf;
   sprintf;
   sscanf;
+  stat;
   statfs;
   statfs64;
   statvfs;

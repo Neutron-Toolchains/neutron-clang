@@ -4,7 +4,7 @@
    are permitted in any medium without royalty provided the copyright
    notice and this notice are preserved.  */
 OUTPUT_FORMAT(pei-i386)
-SEARCH_DIR("/home/kunmun/build/install/x86_64-pep/lib");
+SEARCH_DIR("/home/kunmun/clang/install/x86_64-pep/lib");
 SECTIONS
 {
   /* Make the virtual address and file offset synced if the alignment is

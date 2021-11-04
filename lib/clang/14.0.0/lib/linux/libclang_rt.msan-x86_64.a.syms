@@ -166,6 +166,8 @@
   __interceptor_frexpf;
   __interceptor_frexpl;
   __interceptor_fscanf;
+  __interceptor_fstat;
+  __interceptor_fstatat;
   __interceptor_fstatfs;
   __interceptor_fstatfs64;
   __interceptor_fstatvfs;
@@ -309,6 +311,8 @@
   __interceptor_poll;
   __interceptor_popen;
   __interceptor_posix_memalign;
+  __interceptor_posix_spawn;
+  __interceptor_posix_spawnp;
   __interceptor_ppoll;
   __interceptor_prctl;
   __interceptor_pread;
@@ -437,6 +441,7 @@
   __interceptor_socketpair;
   __interceptor_sprintf;
   __interceptor_sscanf;
+  __interceptor_stat;
   __interceptor_statfs;
   __interceptor_statfs64;
   __interceptor_statvfs;
@@ -1449,6 +1454,8 @@
   frexpf;
   frexpl;
   fscanf;
+  fstat;
+  fstatat;
   fstatfs;
   fstatfs64;
   fstatvfs;
@@ -1591,6 +1598,8 @@
   poll;
   popen;
   posix_memalign;
+  posix_spawn;
+  posix_spawnp;
   ppoll;
   prctl;
   pread;
@@ -1716,6 +1725,7 @@
   socketpair;
   sprintf;
   sscanf;
+  stat;
   statfs;
   statfs64;
   statvfs;
