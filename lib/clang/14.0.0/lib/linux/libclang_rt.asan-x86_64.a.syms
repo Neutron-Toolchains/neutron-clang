@@ -213,6 +213,7 @@
   __interceptor_localtime_r;
   __interceptor_longjmp;
   __interceptor_lrand48_r;
+  __interceptor_lstat;
   __interceptor_mallinfo;
   __interceptor_malloc;
   __interceptor_malloc_stats;
@@ -1409,6 +1410,7 @@
   localtime_r;
   longjmp;
   lrand48_r;
+  lstat;
   mallinfo;
   malloc;
   malloc_stats;

@@ -83,6 +83,7 @@
   __interceptor_clock_getres;
   __interceptor_clock_gettime;
   __interceptor_clock_settime;
+  __interceptor_clone;
   __interceptor_close;
   __interceptor_closedir;
   __interceptor_confstr;
@@ -238,6 +239,7 @@
   __interceptor_localtime_r;
   __interceptor_longjmp;
   __interceptor_lrand48_r;
+  __interceptor_lstat;
   __interceptor_malloc;
   __interceptor_malloc_usable_size;
   __interceptor_mbsnrtowcs;
@@ -1367,6 +1369,7 @@
   clock_getres;
   clock_gettime;
   clock_settime;
+  clone;
   close;
   closedir;
   confstr;
@@ -1522,6 +1525,7 @@
   localtime_r;
   longjmp;
   lrand48_r;
+  lstat;
   malloc;
   malloc_usable_size;
   mbsnrtowcs;

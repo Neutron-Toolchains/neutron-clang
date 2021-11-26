@@ -1422,6 +1422,15 @@ set_target_properties(llvm-tapi-diff PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS llvm-tapi-diff )
 list(APPEND _IMPORT_CHECK_FILES_FOR_llvm-tapi-diff "${_IMPORT_PREFIX}/bin/llvm-tapi-diff" )
 
+# Import target "llvm-tli-checker" for configuration "Release"
+set_property(TARGET llvm-tli-checker APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(llvm-tli-checker PROPERTIES
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/bin/llvm-tli-checker"
+  )
+
+list(APPEND _IMPORT_CHECK_TARGETS llvm-tli-checker )
+list(APPEND _IMPORT_CHECK_FILES_FOR_llvm-tli-checker "${_IMPORT_PREFIX}/bin/llvm-tli-checker" )
+
 # Import target "llvm-undname" for configuration "Release"
 set_property(TARGET llvm-undname APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(llvm-undname PROPERTIES

@@ -201,6 +201,7 @@
   __interceptor_localtime;
   __interceptor_localtime_r;
   __interceptor_lrand48_r;
+  __interceptor_lstat;
   __interceptor_mallinfo;
   __interceptor_malloc;
   __interceptor_malloc_stats;
@@ -1378,6 +1379,7 @@
   localtime;
   localtime_r;
   lrand48_r;
+  lstat;
   mallinfo;
   malloc;
   malloc_stats;
