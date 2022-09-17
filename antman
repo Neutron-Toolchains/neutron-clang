@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2086
 # Written by: dakkshesh07
 # AntMan v1.0 (A Nonsensical Toolchain Manager)
 # Copyright (c) 2022 Dakkshesh <dakkshesh5@gmail.com>
@@ -49,7 +48,7 @@ Arguments :
 
 # A Function to check if package exists
 pkg_check() {
-	if ! command -v $1 --help &>/dev/null; then
+	if ! command -v "$1" --help &>/dev/null; then
 		echo "$1: No"
 		echo "Error: $1 not found!"
 		exit 1
@@ -130,7 +129,7 @@ Checking for system requirements..."
 	pkg_check "curl"
 	echo -e "\e[1m
 Checking for updates..."
-	l_tag=$(cat build.info | grep -A1 tag | tail -n1)
+	l_tag=$(grep -A1 tag build.info | tail -n1)
 	r_tag=$(curl --silent "https://raw.githubusercontent.com/Neutron-Toolchains/clang-build-catalogue/main/latest.txt" | grep -A1 tag | tail -n1)
 	if [[ $l_tag == "$r_tag" ]]; then
 		echo "Already up-to-date!"
@@ -148,7 +147,7 @@ delete() {
 Cleaning toolchain files..."
 	echo "Everything in $c_dir/ except this script itself would be deleted!"
 	while true; do
-		read -p "Proceed? [Y/N] " yn
+		read -rp "Proceed? [Y/N] " yn
 		case $yn in
 		[Yy]*)
 			echo "Cleaning..."
@@ -167,7 +166,7 @@ Checking for system requirements..."
 	pkg_check "curl"
 	echo -e "\e[1m
 Checking for updates..."
-	l_tag=$(cat build.info | grep -A1 tag | tail -n1)
+	l_tag=$(grep -A1 tag build.info | tail -n1)
 	if [[ $1 == "latest" ]]; then
 		r_tag=$(curl --silent "https://raw.githubusercontent.com/Neutron-Toolchains/clang-build-catalogue/main/latest.txt" | grep -A1 tag | tail -n1)
 	else
@@ -189,7 +188,7 @@ Checking for updates..."
 		echo "Removing old toolchain files using $0 -D"
 		delete
 		echo "Downloading new toolchain build using $0 -S=$r_tag"
-		sync_tar $r_tag
+		sync_tar "$r_tag"
 		echo -e "\nToolchain upgraded to $r_tag build!"
 	fi
 }
@@ -197,13 +196,13 @@ Checking for updates..."
 show_info() {
 	echo -e "\e[1m
 Getting toolchain information from build.info...\n"
-	echo "Build date: $(cat build.info | grep -A1 date | tail -n1)"
-	echo "Build tag: $(cat build.info | grep -A1 tag | tail -n1)"
-	echo "Clang version: $(cat build.info | grep -A1 clang-ver | tail -n1)"
-	echo "LLVM commit at: $(cat build.info | grep -A1 llvm-commit | tail -n1)"
-	echo "Binutils version: $(cat build.info | grep -A1 binutils-ver | tail -n1)"
-	echo "Binutils commit at: $(cat build.info | grep -A1 binutils-commit | tail -n1)"
-	echo "Glibc requirement: $(cat build.info | grep -A1 host-glibc | tail -n1)"
+	echo "Build date: $(grep -A1 date build.info | tail -n1)"
+	echo "Build tag: $(grep -A1 tag build.info | tail -n1)"
+	echo "Clang version: $(grep -A1 clang-ver build.info | tail -n1)"
+	echo "LLVM commit at: $(grep -A1 llvm-commit build.info | tail -n1)"
+	echo "Binutils version: $(grep -A1 binutils-ver build.info | tail -n1)"
+	echo "Binutils commit at: $(grep -A1 binutils-commit build.info | tail -n1)"
+	echo "Glibc requirement: $(grep -A1 host-glibc build.info | tail -n1)"
 }
 
 for arg in "$@"; do
